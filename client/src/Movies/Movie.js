@@ -26,26 +26,41 @@ export default class Movie extends React.Component {
       .catch(err => console.log(err.response));
   };
 
+  editMovie = (id, updateMovie) => {
+    axios
+      .put(`http://localhost:5000/api/movies/${id}`, updateMovie)
+      .then(res => console.log(res))
+      .catch(err => console.log(err.response));
+  };
+
   saveMovie = () => {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie);
   };
 
+  
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-
+   
     return (
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <div>
+        <div onClick={console.log("working")}>
           Edit/Update
         </div>
       </div>
     );
   }
 }
+// editMovie(4, {
+//   id: 5,
+// title: "Jobsy",
+// director: "Bailus",
+// metascore: 100,
+// stars: ["Tee", "Bossy", "Sammy"]
+// })
