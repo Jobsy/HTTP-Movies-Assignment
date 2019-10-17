@@ -38,19 +38,30 @@ export default class Movie extends React.Component {
     addToSavedList(this.state.movie);
   };
 
-  
+  putMovie = () => {
+  this.editMovie(4, {
+      id: 5,
+      title: "Jobsy",
+      director: "Bailus",
+      metascore: 100,
+      stars: ["Tee", "Bossy", "Sammy"]
+    })
+    console.log("working");
+  };
+
+
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-   
+
     return (
       <div className="save-wrapper">
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <div onClick={console.log("working")}>
+        <div className="save-button2" onClick={this.putMovie}>
           Edit/Update
         </div>
       </div>
