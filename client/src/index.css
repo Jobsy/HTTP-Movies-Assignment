@@ -61,9 +61,17 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
-.save-button2 {
+.edit-button {
   position: absolute;
   top: 55px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+.delete-button {
+  position: absolute;
+  top: 85px;
   right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
